@@ -6,4 +6,4 @@
         (else (+ a c)))
   )
 
-(maxTwoSum 5 8 -2)
+(maxTwoSum 5 8)
