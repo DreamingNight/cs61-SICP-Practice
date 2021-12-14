@@ -1,5 +1,6 @@
 from operator import add, sub
 
+
 def a_plus_abs_b(a, b):
     """Return a+abs(b), but without calling abs.
 
@@ -13,9 +14,9 @@ def a_plus_abs_b(a, b):
     ['return f(a, b)']
     """
     if b < 0:
-        f = _____
+        f = sub
     else:
-        f = _____
+        f = add
     return f(a, b)
 
 
@@ -37,7 +38,7 @@ def two_of_three(x, y, z):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(two_of_three)).body[0].body]
     ['Expr', 'Return']
     """
-    return _____
+    return min(x*x+y*y, x*x+z*z, y*y+z*z)
 
 
 def largest_factor(n):
@@ -51,6 +52,12 @@ def largest_factor(n):
     1
     """
     "*** YOUR CODE HERE ***"
+    ans = n-1
+    while(ans != 0):
+        if(n % ans == 0):
+            return ans
+        else:
+            ans -= 1
 
 
 def if_function(condition, true_result, false_result):
@@ -84,6 +91,7 @@ def with_if_statement():
     else:
         return false_func()
 
+
 def with_if_function():
     """
     >>> result = with_if_function()
@@ -94,14 +102,20 @@ def with_if_function():
     """
     return if_function(cond(), true_func(), false_func())
 
+
 def cond():
     "*** YOUR CODE HERE ***"
+    return False
+
 
 def true_func():
     "*** YOUR CODE HERE ***"
+    print(42)
+
 
 def false_func():
     "*** YOUR CODE HERE ***"
+    print(47)
 
 
 def hailstone(n):
@@ -120,4 +134,15 @@ def hailstone(n):
     7
     """
     "*** YOUR CODE HERE ***"
-
+    t = n
+    ans = 0
+    while(t != 1):
+        print(int(t))
+        ans += 1
+        if t % 2 == 0:
+            t = t / 2
+        else:
+            t = t * 3 + 1
+    print(int(t))
+    ans += 1
+    return ans
